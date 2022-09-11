@@ -1,0 +1,19 @@
+name: CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Chekout code
+      uses: actions/checkout@v1
+      
+    - name: Run a one-line script
+      run: echo Hello, world!
+      
+    - name: Run multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, andd deploy you project.
+    
