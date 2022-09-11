@@ -2,18 +2,15 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  job-ubuntu:
     runs-on: ubuntu-latest
     steps:
+    - name: print date with ubuntu
+      run: date
+  job-windows:
+    runs-on: windows-latest
+    steps:
+    - name: print date with windows
+      run: Get-Date
     
-    - name: Chekout code
-      uses: actions/checkout@v1
       
-    - name: Run a one-line script
-      run: echo Hello, world!
-      
-    - name: Run multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, andd deploy you project.
-    
