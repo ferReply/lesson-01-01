@@ -12,5 +12,17 @@ jobs:
     steps:
     - name: print date with windows
       run: Get-Date
+  job-mac:
+    runs-on: macos-latest
+    steps:
+    - name: print date with macos
+      run: date
+  job-final:
+    runs-on: ubuntu-latest
+    needs: [job-ubuntu, job-windows, job-mac]
+    steps:
+      - name: final step
+        run: |
+          echo 'FINAL STEP'
     
       
